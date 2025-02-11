@@ -1,4 +1,4 @@
-TARGET := flags
+TARGET := jcc
 
 .PRECIOUS: %.exe
 

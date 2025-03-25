@@ -1,4 +1,4 @@
-TARGET := jcc
+TARGET := stackinstr
 
 .PRECIOUS: %.exe
 
@@ -11,11 +11,12 @@ all: $(TARGET)
 MAKEFLAGS += --no-builtin-rules
 
 %.exe: %.c
-	gcc -O0				\
+	gcc -O1				\
 	    -g				\
 	    -fno-stack-protector	\
 	    -fcf-protection=none	\
 	    -U_FORTIFY_SOURCE		\
+	    -Wall                       \
 	    -o $@			\
 	    $<
 
